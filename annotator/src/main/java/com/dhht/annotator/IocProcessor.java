@@ -8,6 +8,8 @@ import com.dhht.annotation.SwitchChange;
 import com.dhht.annotation.ViewById;
 import com.google.auto.service.AutoService;
 
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.ArrayList;
@@ -27,6 +29,7 @@ import javax.lang.model.SourceVersion;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.PackageElement;
 import javax.lang.model.element.TypeElement;
+import javax.lang.model.element.VariableElement;
 import javax.lang.model.util.Elements;
 import javax.tools.Diagnostic;
 import javax.tools.JavaFileObject;
@@ -85,7 +88,6 @@ public class IocProcessor extends AbstractProcessor {
         annotationTypes.add(SwitchChange.class.getCanonicalName());
         annotationTypes.add(CheckBoxChange.class.getCanonicalName());
         return annotationTypes;
-
     }
 
     @Override
@@ -104,6 +106,8 @@ public class IocProcessor extends AbstractProcessor {
         mClasses.add(RefreshView.class);
         mClasses.add(CheckBoxChange.class);
         mClasses.add(SwitchChange.class);
+
+        mMessager.printMessage(Diagnostic.Kind.NOTE, "Printing: " + "hello");
 
         //保存注解
         if (!saveAnnotation(roundEnvironment)) {

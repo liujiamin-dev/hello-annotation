@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'android-aspectjx'
-group='com.github.tyhjh'
+group='com.github.liujiamin-dev'
 android {
     compileSdkVersion 28
 

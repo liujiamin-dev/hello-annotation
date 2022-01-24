@@ -134,7 +134,7 @@ public class MainActivity extends Activity {
     @CustomAnnotation
     @UiThread(delay = 1000 * 5)
     void toast(String msg) {
-        Log.e("toast", Thread.currentThread().getName() + "：" + System.currentTimeMillis());
+        Log.e(TAG, Thread.currentThread().getName() + "：" + System.currentTimeMillis());
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
     }
 
